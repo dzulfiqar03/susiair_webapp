@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: $bg; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: $navy;
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+.num { font-weight: 800; font-variant-numeric: tabular-nums; }
+.card { background: $card; border-radius: $radius; box-shadow: $shadow; padding: 16px; }
+.btn-primary {
+  background: $red; color: #fff; font-weight: 700; border-radius: 999px;
+  padding: 14px 24px; width: 100%; font-size: 15px;
+  &:disabled { opacity: 0.6; cursor: not-allowed; }
+}
+.section-title { font-size: 16px; font-weight: 700; margin: 24px 0 12px; }
+.muted { color: $text-secondary; font-size: 13px; }
