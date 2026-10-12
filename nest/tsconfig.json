@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "moduleResolution": "node10",
-    "ignoreDeprecations": "6.0",
     "declaration": false,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -17,7 +15,11 @@
     "strictNullChecks": false,
     "noImplicitAny": false,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
