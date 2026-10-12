@@ -1,7 +1,10 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { readFileSync } from 'fs';
-import { join } from 'path';
+// JSON di-import (bukan readFileSync) agar ikut ter-bundle di platform serverless
+// seperti Vercel, yang tidak membawa file non-kode ke runtime.
+import flightHoursData from './mock-flight-hours.json';
+import documentsData from './mock-documents.json';
+import schedulesData from './mock-schedules.json';
 
 /** Memuat 3 file JSON ke memori saat service boot. */
 @Injectable()
@@ -20,11 +23,9 @@ export class DataService implements OnModuleInit {
   }
 
   onModuleInit() {
-    const load = (f: string) =>
-      JSON.parse(readFileSync(join(__dirname, f), 'utf-8'));
-    this.flightHours = load('mock-flight-hours.json');
-    this.documents = load('mock-documents.json');
-    this.schedules = load('mock-schedules.json');
+    this.flightHours = flightHoursData;
+    this.documents = documentsData;
+    this.schedules = schedulesData;
 
     for (const row of this.flightHours.flightHours) {
       this.hoursByDate.set(row.date, Number(row.hours));
