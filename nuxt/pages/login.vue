@@ -13,8 +13,7 @@ async function submit() {
 <template>
   <main class="login">
     <div class="brand">
-      <div class="logo"><Plane :size="28" /></div>
-      <h1>Susi Air</h1>
+      <img src="/logo-susiair.jpeg" alt="Susi Air" class="brand-logo" />
       <p class="muted">Pilot App</p>
     </div>
 
@@ -35,17 +34,70 @@ async function submit() {
 
 <style lang="scss" scoped>
 @use '~/assets/scss/variables' as *;
-.login { padding: 64px 20px; }
+
+.brand-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.login {
+  padding: 64px 20px;
+}
+
 .brand {
-  text-align: center; margin-bottom: 32px;
-  .logo { width: 56px; height: 56px; border-radius: 16px; background: $navy; color: #fff; display: grid; place-items: center; margin: 0 auto 12px; }
-  h1 { font-size: 24px; font-weight: 800; }
+  text-align: center;
+  margin-bottom: 32px;
+
+  .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: $navy;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
 }
-form { display: grid; gap: 16px; }
-label { display: grid; gap: 6px; font-size: 13px; font-weight: 600; }
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 input {
-  padding: 12px 14px; border: 1px solid #e2e5ea; border-radius: 12px; font: inherit; font-size: 15px;
-  &:focus { outline: 2px solid rgba($red, 0.35); border-color: $red; }
+  padding: 12px 14px;
+  border: 1px solid #e2e5ea;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+
+  &:focus {
+    outline: 2px solid rgba($red, 0.35);
+    border-color: $red;
+  }
 }
-.error { background: rgba($danger, 0.1); color: $danger; padding: 10px 12px; border-radius: 10px; font-size: 13px; font-weight: 600; }
+
+.error {
+  background: rgba($danger, 0.1);
+  color: $danger;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
 </style>
